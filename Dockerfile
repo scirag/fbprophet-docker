@@ -16,7 +16,9 @@ RUN apk add --no-cache --virtual .build-deps \
     musl-dev \
     g++
 
-RUN pip install --no-cache-dir fbprophet==0.3.post2
+RUN pip install --no-cache-dir fbprophet==0.3.post2 && \
+    python3 -m pip install --no-cache-dir jupyter
+
 
 # removing dependencies
 RUN apk del .build-deps
